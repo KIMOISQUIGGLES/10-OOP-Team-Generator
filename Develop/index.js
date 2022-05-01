@@ -19,6 +19,7 @@ function askQuestion() {
         }
     ]).then(answers => {
         switch(answers.question) {
+            //PROCEEDS TO ADDING NEW TEAM MEMBER WHEN USER SELECTS
             case "ADD A NEW TEAM MEMBER":
                 console.log("Adding a new team member!");
                 addMember();
@@ -35,6 +36,7 @@ function askQuestion() {
     })
 }
 
+//PROMPTS USER DIFFERENT QUESTION BASED ON WHICH TYPE OF EMPLOYEE IS SELECTED
 function addMember() {
     inquirer.prompt([
         {
@@ -44,6 +46,7 @@ function addMember() {
             name: "memberChoice",
         }
     ])
+    //PREPARES SPECIFIC SETS OF QUESTIONS
     .then(role => {
         switch(role.memberChoice) {
             case "INTERN":
